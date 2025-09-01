@@ -1,0 +1,344 @@
+{
+  "appName": "MyWorkday",
+  "appDescription": "Übernehmen Sie die volle Kontrolle über Ihr Stundeneinkommen. Diese Anwendung ist das ultimative Werkzeug für Freiberufler und Stundenlöhner, die ihre Arbeitstage aufzeichnen, Einnahmen berechnen (einschließlich Überstunden und Zielüberschüssen) und ihren finanziellen Fortschritt detailliert und motivierend visualisieren möchten.",
+  "footer": "MyWorkday",
+
+  "tabs": {
+    "workday": "Arbeitstag",
+    "payments": "Zahlungen",
+    "charts": "Diagramme"
+  },
+
+  "header": {
+    "settings": "Einstellungen",
+    "settingsFor": "Einstellungen für {{name}}",
+    "openSettings": "Einstellungsmenü öffnen",
+    "dataManagement": "Datenverwaltung",
+    "localBackup": "Sicherung",
+    "generateReport": "Bericht erstellen",
+    "goalsAndReminders": "Ziele & Erinnerungen",
+    "dailyGoal": "Tagesziel Einnahmen",
+    "monthlyGoal": "Monatsziel Einnahmen",
+    "paymentReminder": "Zahlungserinnerung",
+    "customizationAndRate": "Anpassung & Stundensatz",
+    "editName": "Name bearbeiten",
+    "changeCurrency": "Währungssymbol ändern",
+    "customizeTheme": "Theme anpassen",
+    "editRate": "Stundensatz bearbeiten",
+    "configureOvertime": "Überstunden konfigurieren",
+    "help": "Hilfe",
+    "quickGuide": "Kurzanleitung",
+    "toggleCrtEffect": "CRT-Effekt umschalten",
+    "signOut": "Abmelden"
+  },
+
+  "dayEditor": {
+    "title": "Arbeitstag:",
+    "selectDate": "Datum auswählen",
+    "aiVoiceInput": "Spracheingabe (KI)",
+    "pendingPayment": "Zahlung ausstehend",
+    "dayHours": "Tagesstunden:",
+    "dayEarnings": "Tageseinnahmen:",
+    "shift": "Schicht {{number}}",
+    "deleteShift": "Schicht {{number}} löschen",
+    "startTime": "Startzeit",
+    "endTime": "Endzeit",
+    "setCurrentTime": "Aktuelle Zeit setzen (gerundet)",
+    "now": "Jetzt",
+    "hoursForShift": "Stunden für Schicht {{number}}:",
+    "save": "Speichern",
+    "saveAndNext": "Speichern & Nächster Tag",
+    "noChangesToSave": "Keine Änderungen zum Speichern."
+  },
+
+  "notifications": {
+    "goalNotMet": "Ziel nicht erreicht. Es fehlen {{currencySymbol}}{{amount}}.",
+    "daySaved": "Arbeitstag gespeichert.",
+    "daySavedAndNext": "Arbeitstag gespeichert und Tag vorgesprungen.",
+    "paymentMarkedAsReceived": "Zahlung für {{date}} als erhalten markiert.",
+    "noDataToExport": "Keine Daten zum Exportieren.",
+    "dataExportedSuccess": "Daten erfolgreich exportiert (JSON).",
+    "errorExportingData": "Fehler beim Exportieren der JSON-Daten: {{error}}",
+    "noFileSelected": "Keine Datei ausgewählt.",
+    "errorReadingFile": "Fehler beim Lesen der Datei.",
+    "dataImportedSuccess": "Daten erfolgreich importiert.",
+    "noNewData": "Die Datei enthielt keine neuen Berichte zum Importieren.",
+    "errorImportingData": "Fehler beim Importieren der Daten: {{error}}",
+    "hourlyRateUpdated": "Stundensatz aktualisiert.",
+    "overtimeSettingsUpdated": "Überstundeneinstellungen aktualisiert.",
+    "themeUpdated": "Theme aktualisiert.",
+    "dailyGoalUpdated": "Tagesziel Einnahmen aktualisiert.",
+    "monthlyGoalUpdated": "Monatsziel Einnahmen aktualisiert.",
+    "paymentReminderUpdated": "Zahlungserinnerungseinstellungen aktualisiert.",
+    "currencySymbolUpdated": "Währungssymbol aktualisiert.",
+    "nameUpdated": "Name erfolgreich aktualisiert.",
+    "aiVoiceError": "Fehler bei der Spracherkennung: {{error}}",
+    "aiRecordingError": "Fehler beim Starten der Aufnahme. Stellen Sie sicher, dass Sie die Mikrofonberechtigung erteilt haben.",
+    "aiShiftsUpdated": "Schichten mit KI aktualisiert.",
+    "aiInvalidShiftError": "KI konnte keine gültige Schicht bestimmen.",
+    "reportGenerated": "Bericht erfolgreich erstellt. Die JSON-Datei wurde heruntergeladen.",
+    "errorGeneratingReport": "Fehler beim Erstellen des Berichts: {{error}}",
+    "hours": "Stunden"
+  },
+
+  "modals": {
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "confirm": "Bestätigen",
+    "close": "Schließen",
+    "understood": "Verstanden",
+
+    "hourlyRate": {
+      "title": "Stundensatz bearbeiten",
+      "newRateLabel": "Neuer Stundensatz ({{currencySymbol}})",
+      "placeholder": "z.B. 20.50",
+      "error": "Bitte geben Sie eine gültige positive Zahl für den Stundensatz ein.",
+      "saveButton": "Stundensatz speichern"
+    },
+    
+    "overtime": {
+      "title": "Überstunden konfigurieren",
+      "description": "Definieren Sie einen Sondertarif für Stunden, die über einer bestimmten täglichen Schwelle gearbeitet werden. Der aktuelle Basissatz beträgt {{currencySymbol}}{{rate}}/h.",
+      "enableLabel": "Überstunden aktivieren",
+      "thresholdLabel": "Schwelle (nach X Stunden)",
+      "newRateLabel": "Neuer Satz ({{currencySymbol}}/h)",
+      "thresholdError": "Die Stundenschwelle muss eine positive Zahl sein.",
+      "rateError": "Der Überstundensatz muss eine positive Zahl sein.",
+      "saveButton": "Änderungen speichern"
+    },
+
+    "theme": {
+      "title": "Theme anpassen",
+      "headerColor": "Kopfzeilenfarbe",
+      "appBgColor": "App-Hintergrundfarbe",
+      "restoreDefaults": "Standard wiederherstellen",
+      "saveButton": "Theme speichern",
+      "presets": {
+        "sky": "Himmel",
+        "slate": "Schiefer",
+        "forest": "Wald",
+        "plum": "Pflaume",
+        "sunset": "Sonnenuntergang",
+        "ocean": "Ozean",
+        "hacker": "Hacker"
+      },
+      "customColor": "Benutzerdefiniert",
+      "backToPresets": "Zurück zu Voreinstellungen"
+    },
+
+    "idealDailyEarnings": {
+      "title": "Tagesziel Einnahmen",
+      "label": "Ideales Tagesziel Einnahmen ({{currencySymbol}})",
+      "placeholder": "z.B. 100",
+      "description": "Setzen Sie ein Ziel, um es im Tageseinnahmen-Diagramm zu visualisieren. Wenn ein Arbeitstag dieses Ziel nicht erreicht, wird der Balken rot angezeigt.",
+      "error": "Bitte geben Sie eine gültige positive Zahl für das Ziel ein.",
+      "saveButton": "Ziel speichern"
+    },
+    
+    "idealMonthlyEarnings": {
+      "title": "Monatsziel Einnahmen",
+      "label": "Ideales Monatsziel Einnahmen ({{currencySymbol}})",
+      "placeholder": "z.B. 2000",
+      "description": "Setzen Sie ein Ziel, um es im Monatsübersichts-Diagramm zu visualisieren. Monate, die dieses Ziel nicht erreichen, werden hervorgehoben.",
+      "error": "Bitte geben Sie eine positive ganze Zahl für Tage ein.",
+      "saveButton": "Monatsziel speichern"
+    },
+    
+    "paymentReminder": {
+      "title": "Zahlungserinnerung einstellen",
+      "label": "Benachrichtigen nach (Tage der ausstehenden Zahlung):",
+      "placeholder": "z.B. 7",
+      "description": "Die App zeigt eine Warnmeldung für Zahlungen an, die länger als hier konfiguriert ausstehen.",
+      "error": "Bitte geben Sie eine positive ganze Zahl für Tage ein.",
+      "saveButton": "Einstellungen speichern"
+    },
+
+    "currency": {
+      "title": "Währungssymbol ändern",
+      "label": "Währungssymbol (z.B. $, €, £)",
+      "placeholder": "z.B. $",
+      "description": "Dieses Symbol wird zur Anzeige aller Geldbeträge in der Anwendung verwendet.",
+      "emptyError": "Das Währungssymbol darf nicht leer sein.",
+      "lengthError": "Das Währungssymbol ist zu lang (max. 5 Zeichen).",
+      "saveButton": "Symbol speichern"
+    },
+
+    "workerName": {
+      "title": "Name bearbeiten",
+      "label": "Ihr Name (wird in Berichten verwendet)",
+      "placeholder": "z.B. Max Mustermann",
+      "error": "Der Name darf nicht leer sein.",
+      "saveButton": "Name speichern"
+    },
+
+    "generateReport": {
+      "title": "Bericht für Zahler erstellen",
+      "description": "Wählen Sie einen Datumsbereich, um einen JSON-Bericht zu erstellen, den Sie an Ihren Zahler senden können.",
+      "startDate": "Startdatum",
+      "endDate": "Enddatum",
+      "generateButton": "Bericht erstellen & herunterladen"
+    },
+
+    "dataManager": {
+      "title": "Datenverwaltung",
+      "localBackup": "Lokale Sicherung",
+      "localDescription": "Speichern oder laden Sie eine JSON-Datei Ihrer Daten auf Ihrem Gerät.",
+      "exportToFile": "In Datei exportieren",
+      "importFromFile": "Aus Datei importieren"
+    },
+
+    "aiShiftInput": {
+      "title": "Spracheingabe",
+      "apiNotReady": "Die Gemini- oder Spracherkennungs-API ist nicht verfügbar. Stellen Sie sicher, dass Sie einen API-Schlüssel haben und Ihr Browser kompatibel ist.",
+      "description": "Drücken Sie das Mikrofon und sagen Sie Ihren Arbeitstag. <br/>Beispiel: \"Heute habe ich von 9 bis halb 3 gearbeitet und dann von 4 bis viertel nach 7.\"",
+      "startRecording": "Aufnahme starten",
+      "stopRecording": "Aufnahme stoppen",
+      "processing": "Verarbeitung mit KI...",
+      "waiting": "Warte auf Aufnahme..."
+    },
+    
+    "welcome1980": {
+      "title": "WILLKOMMEN IM JAHR 1980",
+      "ok": "OK"
+    }
+  },
+  
+  "charts": {
+    "size": "Größe",
+    "sizeSmall": "Klein",
+    "sizeMedium": "Mittel",
+    "sizeLarge": "Groß",
+    "earnings": "Einnahmen",
+    "dayOfMonth": "Tag des Monats",
+    "weekOfMonth": "Woche des Monats",
+    "monthOfYear": "Monat des Jahres {{year}}",
+    "previousMonth": "Vorheriger Monat",
+    "nextMonth": "Nächster Monat",
+    "previousYear": "Vorheriges Jahr",
+    "nextYear": "Nächstes Jahr",
+    "currentYear": "Aktuelles Jahr",
+    "today": "Heute",
+    "totalMonth": "Monatssumme:",
+    "noDataForChart": "Keine Daten zur Erstellung des Diagramms für {{monthYear}} vorhanden.",
+    "noEarningsRecorded": "Keine Einnahmen für {{monthYear}} erfasst.",
+    "goal": "Ziel:",
+    "earningsTooltip": "Einnahmen:",
+    "goalTooltip": "Ziel:",
+    "noDataForChartGeneric": "Keine Daten zum Anzeigen.",
+    "surplus": "Überschuss",
+    "week": "Wo",
+    
+    "monthlyEarnings": {
+      "title": "Monatsübersicht Einnahmen"
+    },
+    
+    "weeklyAverage": {
+      "title": "Monatliche Durchschnittsstatistiken",
+      "daysWorked": "Arbeitstage",
+      "totalHours": "Gesamtstunden",
+      "avgHoursDay": "Ø Std./Tag",
+      "busiestDay": "Produktivster Tag"
+    },
+    
+    "overtime": {
+      "title": "Überstundenstatistiken",
+      "notEnabled": "Die Überstundenfunktion ist nicht aktiviert. Sie können sie in den Einstellungen aktivieren.",
+      "totalMonth": "Gesamtüberstunden im Monat",
+      "weeklyBreakdown": "Wöchentliche Aufschlüsselung",
+      "dailyBreakdown": "Tägliche Aufschlüsselung",
+      "noOvertimeMonth": "Keine Überstunden für diesen Monat erfasst.",
+      "noOvertimeDays": "Keine Tage mit Überstunden in diesem Monat."
+    },
+    
+    "weeklySummary": {
+      "title": "Wochenübersicht",
+      "week": "Wo",
+      "noEarningsWeek": "Für die Wochen dieses Monats wurden keine Einnahmen erfasst."
+    },
+    
+    "monthlySummary": {
+      "title": "Monatsübersicht Einnahmen",
+      "noData": "Keine Einnahmendaten zum Anzeigen.",
+      "weekLegend": "Woche {{number}}",
+      "surplusLegend": "Überschuss",
+      "noEarningsMonths": "Keine Einnahmen für die angezeigten Monate erfasst.",
+      "chartAriaLabel": "Horizontales Balkendiagramm, das die Gesamteinnahmen für jeden Monat anzeigt. Jeder Balken ist nach wöchentlichen Einnahmen segmentiert."
+    },
+    
+    "annualReport": {
+      "title": "Jahresbericht",
+      "insufficientData": "Unzureichende Daten für das Jahresdiagramm.",
+      "month": "Monat",
+      "totalAnnual": "Jahressumme",
+      "noEarningsYear": "Keine Einnahmen für dieses Jahr erfasst."
+    },
+    
+    "currentPeriodSummary": {
+      "title": "Kurzübersicht",
+      "today": "Heute",
+      "thisWeek": "Diese Woche",
+      "thisMonth": "Dieser Monat"
+    },
+    
+    "pendingPayments": {
+      "title": "Ausstehende Zahlungen",
+      "titleCount": "Ausstehende Zahlungen ({{count}})",
+      "totalPending": "Gesamt ausstehend:",
+      "noPending": "Momentan keine ausstehenden Zahlungen.",
+      "pendingEarning": "Ausstehende Einnahmen:",
+      "markAsPaid": "Als bezahlt markieren"
+    },
+    
+    "calendar": {
+      "weekTotal": "Wo"
+    }
+  },
+
+  "initialSetup": {
+    "title": "Ersteinrichtung",
+    "description": "Passen Sie die Anwendung an, um zu beginnen.",
+    "nameLabel": "Ihr Name",
+    "namePlaceholder": "z.B. Erika Mustermann",
+    "nameError": "Der Name darf nicht leer sein.",
+    "rateLabel": "Ihr Stundensatz",
+    "currencyLabel": "Währungssymbol",
+    "dailyGoalLabel": "Tagesziel Einnahmen",
+    "monthlyGoalLabel": "Monatsziel Einnahmen",
+    "themeLabel": "Visuelles Theme",
+    "lightTheme": "Hell",
+    "darkTheme": "Dunkel",
+    "rateError": "Der Stundensatz muss eine gültige Zahl sein.",
+    "currencyError": "Das Währungssymbol darf nicht leer sein.",
+    "dailyGoalError": "Das Tagesziel muss eine gültige Zahl sein.",
+    "monthlyGoalError": "Das Monatsziel muss eine gültige Zahl sein.",
+    "startButton": "Loslegen",
+    "footerNote": "Sie können all diese Werte später im Einstellungsmenü ändern."
+  },
+  "weekdays": {
+    "monday": "Montag",
+    "tuesday": "Dienstag",
+    "wednesday": "Mittwoch",
+    "thursday": "Donnerstag",
+    "friday": "Freitag",
+    "saturday": "Samstag",
+    "sunday": "Sonntag",
+    "na": "N/A"
+  },
+  "weekdaysShort": {
+    "monday": "Mo",
+    "tuesday": "Di",
+    "wednesday": "Mi",
+    "thursday": "Do",
+    "friday": "Fr",
+    "saturday": "Sa",
+    "sunday": "So"
+  },
+   "login": {
+    "welcomeMessage": "Melden Sie sich an, um Ihre Daten in der Cloud zu synchronisieren.",
+    "signInWithGoogle": "Mit Google anmelden",
+    "firebaseNotConfigured": "Firebase-Konfiguration nicht gefunden. Anmeldung ist deaktiviert.",
+    "firebaseNotConfiguredDetails": "Bitte überprüfen Sie die Datei <code>index.html</code> im Stammverzeichnis des Projekts und ersetzen Sie <code>PASTE_YOUR_FIREBASE_API_KEY_HERE</code> durch Ihren tatsächlichen Firebase-API-Schlüssel.",
+    "unauthorizedDomainErrorTitle": "Fehler: Nicht autorisierte Domain",
+    "unauthorizedDomainError": "Diese Domain (<code>{{domain}}</code>) ist nicht autorisiert. <br/> Bitte gehen Sie zu Ihrer <strong>Firebase-Konsole &rarr; Authentication &rarr; Settings &rarr; Autorisierte Domains</strong> und fügen Sie diese Domain zur Liste hinzu, um die Anmeldung zu aktivieren."
+  }
+}

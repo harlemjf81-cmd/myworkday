@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyWorkday</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=VT323&display=swap" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=VT323&display=swap"></noscript>
+  <style>
+    /* Custom scrollbar for better aesthetics */
+    /* For Webkit browsers */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1; /* Light theme track */
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #888; /* Light theme thumb */
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555; /* Light theme thumb hover */
+    }
+
+    /* Dark theme scrollbar - will apply if OS is dark and Tailwind uses media query, or if a dark theme is manually set */
+    .dark ::-webkit-scrollbar-track {
+      background: #2d3748; /* Dark theme track (gray-800) */
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #718096; /* Dark theme thumb (gray-500) */
+    }
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background: #a0aec0; /* Dark theme thumb hover (gray-400) */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif; /* A common Tailwind-friendly font */
+      transition: background-color 0.3s ease-in-out; /* For body background color transition */
+    }
+    /* Ensure smooth transitions for color changes on other elements */
+    * {
+        transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms; /* Default Tailwind duration, can be overridden */
+    }
+    /* Specific transition for the app's main background managed by React */
+    #root > div {
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Toast Animation */
+    @keyframes toast-in {
+      from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .animate-toast-in {
+      animation: toast-in 0.3s ease-out forwards;
+    }
+    /* Custom shadow for top of an element (like bottom nav bar) */
+    .shadow-top {
+        box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    /* ASCII Mode Easter Egg */
+    .ascii-mode, .ascii-mode *:not(.blinking-cursor) {
+        font-family: 'VT323', monospace !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        transition-property: none !important;
+        animation: none !important;
+    }
+    .ascii-mode {
+        background-color: #000000 !important;
+        color: #00ff00 !important;
+    }
+    .ascii-mode ::-webkit-scrollbar-track {
+        background: #000000;
+    }
+    .ascii-mode ::-webkit-scrollbar-thumb {
+        background: #008000;
+        border: 1px solid #00ff00;
+    }
+    .ascii-mode body {
+        background-color: #000000 !important;
+    }
+    .ascii-mode [class*="bg-"] {
+        background-color: transparent !important;
+    }
+    .ascii-mode .bg-white, .ascii-mode .dark\\:bg-slate-800, .ascii-mode .bg-slate-50, .ascii-mode .dark\\:bg-slate-700\\/50, .ascii-mode .bg-slate-100, .ascii-mode .dark\\:bg-slate-700, .ascii-mode [style*="background-color"] {
+        background-color: #000000 !important;
+        color: #00ff00 !important;
+    }
+    .ascii-mode #day-editor-calendar-grid {
+      background-color: #000000 !important;
+      border: 1px solid #00ff00 !important;
+    }
+    
+    /* Improved calendar visibility for ASCII mode */
+    .ascii-mode #day-editor-calendar-grid div[role="button"] { /* Day numbers */
+        font-size: 1.25rem !important;
+        line-height: 1.25rem !important;
+    }
+    .ascii-mode #day-editor-calendar-grid .text-xs { /* Weekly total font size */
+        font-size: 1rem !important;
+        line-height: 1.2rem !important;
+    }
+    .ascii-mode .grid-cols-8 > div:nth-child(8n) { /* Weekly total column */
+        border-left: 1px dashed #00ff00 !important;
+    }
+    .ascii-mode .bg-green-500 { /* Saved Day Indicator */
+        background-color: #00ff00 !important; /* Solid square */
+        width: 8px !important;
+        height: 8px !important;
+        border: none !important;
+        bottom: 3px !important;
+    }
+    .ascii-mode .bg-amber-500 { /* Pending Payment Indicator */
+        background-color: transparent !important;
+        width: 10px !important;
+        height: 10px !important;
+        border: 2px solid #00ff00 !important; /* Hollow, thicker square */
+        bottom: 2px !important;
+    }
+
+    .ascii-mode [role="menu"] {
+      background-color: #000000 !important;
+      border: 1px solid #00ff00 !important;
+    }
+    .ascii-mode [class*="text-"], .ascii-mode [class*="dark:text-"] {
+        color: #00ff00 !important;
+    }
+    .ascii-mode .text-white, .ascii-mode .dark\\:text-slate-100 {
+        /* Inverted for hover states on buttons */
+        color: #000000 !important;
+    }
+    .ascii-mode [class*="border-"], .ascii-mode [class*="dark:border-"] {
+        border-color: #00ff00 !important;
+    }
+    .ascii-mode hr {
+        border-color: #00ff00 !important;
+    }
+    .ascii-mode input, .ascii-mode select {
+        background-color: #000 !important;
+        border: 1px solid #00ff00 !important;
+        color: #00ff00 !important;
+        appearance: none;
+    }
+    .ascii-mode input[type="color"] {
+        border-width: 3px !important; /* Make color swatch more visible */
+    }
+    .ascii-mode button {
+        border: 1px solid #00ff00 !important;
+        background-color: #000000 !important;
+        color: #00ff00 !important;
+    }
+    .ascii-mode button:hover, .ascii-mode button:focus {
+        background-color: #00ff00 !important;
+        color: #000000 !important;
+    }
+    .ascii-mode button:disabled {
+        background-color: #000000 !important;
+        color: #008000 !important;
+        border-color: #008000 !important;
+        opacity: 0.5;
+    }
+    .ascii-mode .text-red-500, .ascii-mode .fill-red-500, .ascii-mode .stroke-red-600 {
+        color: #ff4136 !important;
+        fill: #ff4136 !important;
+        stroke: #ff4136 !important;
+    }
+    .ascii-mode .text-green-600, .ascii-mode .fill-green-500 {
+        color: #00ff00 !important;
+        fill: #00ff00 !important;
+    }
+    .ascii-mode .fill-sky-500, .ascii-mode .fill-current {
+        fill: #00ff00 !important;
+    }
+    .ascii-mode .stroke-red, .ascii-mode line[stroke="red"] {
+        stroke: #ff4136 !important;
+    }
+    .ascii-mode svg {
+        color: #00ff00 !important;
+    }
+    .ascii-mode .shadow-top {
+        box-shadow: 0 -1px 0 0 #00ff00 !important;
+    }
+    .ascii-mode .fill-red-300, .ascii-mode .dark\\:fill-red-800 {
+        fill: #008000 !important; /* Dimmed green for shortfall */
+    }
+
+    /* Inverted style for toasts in ASCII mode */
+    .ascii-mode [role="alert"] {
+        background-color: #00ff00 !important;
+        color: #000000 !important;
+        border: 1px solid #000000 !important;
+    }
+    .ascii-mode [role="alert"] p, .ascii-mode [role="alert"] span {
+        color: #000000 !important;
+    }
+    .ascii-mode [role="alert"] svg {
+        color: #000000 !important;
+        fill: #000000 !important;
+    }
+    .ascii-mode [role="alert"] button {
+        background-color: transparent !important;
+        border: none !important;
+    }
+    .ascii-mode [role="alert"] > div[style*="width"] {
+        background-color: #000000 !important;
+    }
+
+    /* CRT Effect */
+    @keyframes flicker {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.7; }
+    }
+    .crt-effect {
+      position: relative;
+      overflow: hidden;
+    }
+    .crt-effect::before { /* Scanlines */
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: 100% 4px, 6px 100%;
+      z-index: 1000;
+      pointer-events: none;
+      animation: flicker 0.15s infinite;
+    }
+    .crt-effect::after { /* Vignette */
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.6) 100%);
+      z-index: 1001;
+      pointer-events: none;
+    }
+    .crt-effect.ascii-mode * {
+      text-shadow: 0 0 5px #00ff00, 0 0 1px #00ff00;
+    }
+
+    /* Blinking Cursor for ASCII mode */
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+    .ascii-mode .blinking-cursor {
+        animation: blink 1s step-end infinite;
+        font-weight: normal;
+        margin-left: 2px;
+        /* Use a slightly smaller glow on the cursor to make the underscore shape sharper */
+        text-shadow: 0 0 3px #00ff00;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "xlsx": "https://esm.sh/xlsx@^0.18.5",
+    "@google/genai": "https://esm.sh/@google/genai@^1.9.0",
+    "i18next": "https://esm.sh/i18next@^23.11.5",
+    "react-i18next": "https://esm.sh/react-i18next@^14.1.2",
+    "i18next-browser-languagedetector": "https://esm.sh/i18next-browser-languagedetector@^8.0.0",
+    "i18next-http-backend": "https://esm.sh/i18next-http-backend@^2.5.2",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js",
+    "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js",
+    "firebase/": "https://esm.sh/firebase@^12.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="dark:bg-slate-900">
+  <div id="root"></div>
+  <script>
+    if (typeof process === 'undefined') {
+      window.process = { env: {} };
+    }
+    // You can add your Gemini API key here for testing AI features.
+    // window.process.env.API_KEY = "YOUR_GEMINI_API_KEY";
+    
+    // --- Firebase Configuration ---
+    // For Firebase to work, you MUST provide your own Firebase project configuration.
+    // 1. Go to Firebase Console: https://console.firebase.google.com/
+    // 2. Create a new project.
+    // 3. Add a "Web" app to your project.
+    // 4. Copy the `firebaseConfig` object and paste it below, replacing the placeholder values.
+    window.process.env.firebaseConfig = {
+      apiKey: "AIzaSyBZO8Kl-b2dgoi-jNeaBSYoD_76IflpQQk",
+      authDomain: "myworkdaydatabase.firebaseapp.com",
+      projectId: "myworkdaydatabase",
+      storageBucket: "myworkdaydatabase.appspot.com",
+      messagingSenderId: "410360714441",
+      appId: "1:410360714441:web:f041f0715439e4dadb2918",
+      measurementId: "G-28SYBER4MD"
+    };
+  </script>
+  <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

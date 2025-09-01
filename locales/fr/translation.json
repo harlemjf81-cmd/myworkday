@@ -1,0 +1,344 @@
+{
+  "appName": "MyWorkday",
+  "appDescription": "Prenez le contrôle total de vos revenus horaires. Cette application est l'outil ultime pour les freelances et les travailleurs à l'heure qui souhaitent enregistrer leurs journées de travail, calculer leurs gains (y compris les heures supplémentaires et les surplus d'objectifs) et visualiser leur progression financière de manière détaillée et motivante.",
+  "footer": "MyWorkday",
+  
+  "tabs": {
+    "workday": "Journée",
+    "payments": "Paiements",
+    "charts": "Graphiques"
+  },
+
+  "header": {
+    "settings": "Paramètres",
+    "settingsFor": "Paramètres de {{name}}",
+    "openSettings": "Ouvrir le menu des paramètres",
+    "dataManagement": "Gestion des Données",
+    "localBackup": "Sauvegarde",
+    "generateReport": "Générer un Rapport",
+    "goalsAndReminders": "Objectifs & Rappels",
+    "dailyGoal": "Objectif de Gains Quotidiens",
+    "monthlyGoal": "Objectif de Gains Mensuels",
+    "paymentReminder": "Rappel de Paiement",
+    "customizationAndRate": "Personnalisation & Tarif",
+    "editName": "Modifier le Nom",
+    "changeCurrency": "Changer Symbole Monétaire",
+    "customizeTheme": "Personnaliser le Thème",
+    "editRate": "Modifier le Tarif",
+    "configureOvertime": "Configurer Heures Supp.",
+    "help": "Aide",
+    "quickGuide": "Guide Rapide",
+    "toggleCrtEffect": "Activer/Désactiver l'effet CRT",
+    "signOut": "Se Déconnecter"
+  },
+  
+  "dayEditor": {
+    "title": "Journée :",
+    "selectDate": "Sélectionner la date",
+    "aiVoiceInput": "Saisie Vocale (IA)",
+    "pendingPayment": "Paiement en Attente",
+    "dayHours": "Heures du jour :",
+    "dayEarnings": "Gains du jour :",
+    "shift": "Service {{number}}",
+    "deleteShift": "Supprimer Service {{number}}",
+    "startTime": "Heure de Début",
+    "endTime": "Heure de Fin",
+    "setCurrentTime": "Définir l'heure actuelle (arrondie)",
+    "now": "Maint.",
+    "hoursForShift": "Heures du service {{number}} :",
+    "save": "Enregistrer",
+    "saveAndNext": "Enreg. & Jour Suivant",
+    "noChangesToSave": "Aucun changement à enregistrer."
+  },
+
+  "notifications": {
+    "goalNotMet": "Objectif non atteint. Il manque {{currencySymbol}}{{amount}}.",
+    "daySaved": "Journée enregistrée.",
+    "daySavedAndNext": "Journée enregistrée et jour avancé.",
+    "paymentMarkedAsReceived": "Paiement pour le {{date}} marqué como reçu.",
+    "noDataToExport": "Aucune donnée à exporter.",
+    "dataExportedSuccess": "Données exportées avec succès (JSON).",
+    "errorExportingData": "Erreur lors de l'exportation des données JSON : {{error}}",
+    "noFileSelected": "Aucun fichier sélectionné.",
+    "errorReadingFile": "Erreur lors de la lecture du fichier.",
+    "dataImportedSuccess": "Données importées avec succès.",
+    "noNewData": "Le fichier ne contenait aucun nouveau rapport à importer.",
+    "errorImportingData": "Erreur lors de l'importation des données : {{error}}",
+    "hourlyRateUpdated": "Tarif horaire mis à jour.",
+    "overtimeSettingsUpdated": "Paramètres des heures supplémentaires mis à jour.",
+    "themeUpdated": "Thème mis à jour.",
+    "dailyGoalUpdated": "Objectif de gains quotidiens mis à jour.",
+    "monthlyGoalUpdated": "Objectif de gains mensuels mis à jour.",
+    "paymentReminderUpdated": "Paramètres de rappel de paiement mis à jour.",
+    "currencySymbolUpdated": "Symbole monétaire mis à jour.",
+    "nameUpdated": "Nom mis à jour avec succès.",
+    "aiVoiceError": "Erreur de reconnaissance vocale : {{error}}",
+    "aiRecordingError": "Erreur lors du démarrage de l'enregistrement. Assurez-vous d'avoir accordé la permission pour le microphone.",
+    "aiShiftsUpdated": "Services mis à jour avec l'IA.",
+    "aiInvalidShiftError": "L'IA n'a pas pu déterminer un service valide.",
+    "reportGenerated": "Rapport généré avec succès. Le fichier JSON a été téléchargé.",
+    "errorGeneratingReport": "Erreur lors de la génération du rapport : {{error}}",
+    "hours": "heures"
+  },
+
+  "modals": {
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "understood": "Compris",
+
+    "hourlyRate": {
+      "title": "Modifier le Tarif Horaire",
+      "newRateLabel": "Nouveau Tarif Horaire ({{currencySymbol}})",
+      "placeholder": "ex : 20.50",
+      "error": "Veuillez entrer un nombre positif valide pour le tarif.",
+      "saveButton": "Enregistrer le Tarif"
+    },
+    
+    "overtime": {
+      "title": "Configurer les Heures Supplémentaires",
+      "description": "Définissez un tarif spécial pour les heures travaillées au-delà d'un certain seuil quotidien. Le tarif de base actuel est de {{currencySymbol}}{{rate}}/h.",
+      "enableLabel": "Activer les heures supplémentaires",
+      "thresholdLabel": "Seuil (après X heures)",
+      "newRateLabel": "Nouveau Tarif ({{currencySymbol}}/h)",
+      "thresholdError": "Le seuil d'heures doit être un nombre positif.",
+      "rateError": "Le tarif des heures supplémentaires doit être un nombre positif.",
+      "saveButton": "Enregistrer les Modifications"
+    },
+
+    "theme": {
+      "title": "Personnaliser le Thème",
+      "headerColor": "Couleur de l'En-tête",
+      "appBgColor": "Couleur de Fond de l'App",
+      "restoreDefaults": "Restaurer les Défauts",
+      "saveButton": "Enregistrer le Thème",
+      "presets": {
+        "sky": "Ciel",
+        "slate": "Ardoise",
+        "forest": "Forêt",
+        "plum": "Prune",
+        "sunset": "Crépuscule",
+        "ocean": "Océan",
+        "hacker": "Hacker"
+      },
+      "customColor": "Personnaliser",
+      "backToPresets": "Retour aux Prédéfinis"
+    },
+    
+    "idealDailyEarnings": {
+      "title": "Objectif de Gains Quotidiens",
+      "label": "Objectif de Gains Quotidiens Idéal ({{currencySymbol}})",
+      "placeholder": "ex : 100",
+      "description": "Définissez un objectif pour le visualiser sur le graphique des gains quotidiens. Si une journée de travail n'atteint pas cet objectif, la barre sera affichée en rouge.",
+      "error": "Veuillez entrer un nombre positif valide pour l'objectif.",
+      "saveButton": "Enregistrer l'Objectif"
+    },
+    
+    "idealMonthlyEarnings": {
+      "title": "Objectif de Gains Mensuels",
+      "label": "Objectif de Gains Mensuels Idéal ({{currencySymbol}})",
+      "placeholder": "ex : 2000",
+      "description": "Définissez un objectif pour le visualiser sur le graphique de résumé mensuel. Les mois qui n'atteignent pas cet objectif seront mis en évidence.",
+      "error": "Veuillez entrer un entier positif pour les jours.",
+      "saveButton": "Enregistrer l'Objectif Mensuel"
+    },
+    
+    "paymentReminder": {
+      "title": "Définir le Rappel de Paiement",
+      "label": "Notifier après (jours de paiement en attente) :",
+      "placeholder": "ex : 7",
+      "description": "L'application affichera une notification d'avertissement pour les paiements en attente depuis plus de jours que configuré ici.",
+      "error": "Veuillez entrer un entier positif pour les jours.",
+      "saveButton": "Enregistrer les Paramètres"
+    },
+
+    "currency": {
+      "title": "Changer le Symbole Monétaire",
+      "label": "Symbole Monétaire (ex : $, €, £)",
+      "placeholder": "ex : $",
+      "description": "Ce symbole sera utilisé pour afficher tous les montants monétaires dans l'application.",
+      "emptyError": "Le symbole monétaire ne peut pas être vide.",
+      "lengthError": "Le symbole monétaire est trop long (max. 5 caractères).",
+      "saveButton": "Enregistrer le Symbole"
+    },
+
+    "workerName": {
+      "title": "Modifier le Nom",
+      "label": "Votre nom (utilisé dans les rapports)",
+      "placeholder": "ex : Jean Dupont",
+      "error": "Le nom ne peut pas être vide.",
+      "saveButton": "Enregistrer le Nom"
+    },
+
+    "generateReport": {
+      "title": "Générer un Rapport pour le Payeur",
+      "description": "Sélectionnez une plage de dates pour générer un rapport JSON que vous pouvez envoyer à votre payeur.",
+      "startDate": "Date de Début",
+      "endDate": "Date de Fin",
+      "generateButton": "Générer et Télécharger le Rapport"
+    },
+
+    "dataManager": {
+      "title": "Gestion des Données",
+      "localBackup": "Sauvegarde Locale",
+      "localDescription": "Enregistrez ou chargez un fichier JSON de vos données sur votre appareil.",
+      "exportToFile": "Exporter vers un fichier",
+      "importFromFile": "Importer depuis un fichier"
+    },
+
+    "aiShiftInput": {
+      "title": "Saisie Vocale",
+      "apiNotReady": "L'API Gemini ou de reconnaissance vocale n'est pas disponible. Assurez-vous d'avoir une clé API et que votre navigateur est compatible.",
+      "description": "Appuyez sur le microphone et dites votre journée de travail. <br/>Exemple : \"Aujourd'hui, j'ai travaillé de 9h à 14h30, puis de 16h à 19h15.\"",
+      "startRecording": "Démarrer l'enregistrement",
+      "stopRecording": "Arrêter l'enregistrement",
+      "processing": "Traitement par l'IA...",
+      "waiting": "En attente d'enregistrement..."
+    },
+    
+    "welcome1980": {
+      "title": "BIENVENUE EN 1980",
+      "ok": "OK"
+    }
+  },
+  
+  "charts": {
+    "size": "Taille",
+    "sizeSmall": "Petit",
+    "sizeMedium": "Moyen",
+    "sizeLarge": "Grand",
+    "earnings": "Gains",
+    "dayOfMonth": "Jour du Mois",
+    "weekOfMonth": "Semaine du Mois",
+    "monthOfYear": "Mois de l'Année {{year}}",
+    "previousMonth": "Mois précédent",
+    "nextMonth": "Mois suivant",
+    "previousYear": "Année précédente",
+    "nextYear": "Année suivante",
+    "currentYear": "Année Actuelle",
+    "today": "Aujourd'hui",
+    "totalMonth": "Total du Mois :",
+    "noDataForChart": "Aucune donnée pour générer le graphique pour {{monthYear}}.",
+    "noEarningsRecorded": "Aucun gain enregistré pour {{monthYear}}.",
+    "goal": "Objectif :",
+    "earningsTooltip": "Gains :",
+    "goalTooltip": "Objectif :",
+    "noDataForChartGeneric": "Aucune donnée à afficher.",
+    "surplus": "Excédent",
+    "week": "Sem",
+    
+    "monthlyEarnings": {
+      "title": "Résumé des Gains Mensuels"
+    },
+    
+    "weeklyAverage": {
+      "title": "Statistiques Moyennes Mensuelles",
+      "daysWorked": "Jours Travaillés",
+      "totalHours": "Heures Totales",
+      "avgHoursDay": "Moy. Heures/Jour",
+      "busiestDay": "Jour le Plus Productif"
+    },
+    
+    "overtime": {
+      "title": "Statistiques Heures Supp.",
+      "notEnabled": "La fonction heures supplémentaires n'est pas activée. Vous pouvez l'activer dans les paramètres.",
+      "totalMonth": "Total des Heures Supp. du Mois",
+      "weeklyBreakdown": "Détail par Semaine",
+      "dailyBreakdown": "Détail par Jour",
+      "noOvertimeMonth": "Aucune heure supplémentaire enregistrée pour ce mois.",
+      "noOvertimeDays": "Aucun jour avec des heures supplémentaires ce mois-ci."
+    },
+    
+    "weeklySummary": {
+      "title": "Résumé Hebdomadaire",
+      "week": "Sem",
+      "noEarningsWeek": "Aucun gain n'a été enregistré pour les semaines de ce mois."
+    },
+    
+    "monthlySummary": {
+      "title": "Résumé des Gains Mensuels",
+      "noData": "Aucune donnée de gains à afficher.",
+      "weekLegend": "Semaine {{number}}",
+      "surplusLegend": "Excédent",
+      "noEarningsMonths": "Aucun gain enregistré pour les mois affichés.",
+      "chartAriaLabel": "Graphique à barres horizontales montrant les gains totaux pour chaque mois. Chaque barre est segmentée par les gains hebdomadaires."
+    },
+    
+    "annualReport": {
+      "title": "Rapport Annuel",
+      "insufficientData": "Données insuffisantes pour le graphique annuel.",
+      "month": "Mois",
+      "totalAnnual": "Total Annuel",
+      "noEarningsYear": "Aucun gain enregistré pour cette année."
+    },
+    
+    "currentPeriodSummary": {
+      "title": "Résumé Rapide",
+      "today": "Aujourd'hui",
+      "thisWeek": "Cette Semaine",
+      "thisMonth": "Ce Mois-ci"
+    },
+    
+    "pendingPayments": {
+      "title": "Paiements en Attente",
+      "titleCount": "Paiements en Attente ({{count}})",
+      "totalPending": "Total en Attente :",
+      "noPending": "Aucun paiement en attente pour le moment.",
+      "pendingEarning": "Gain en Attente :",
+      "markAsPaid": "Marquer comme Payé"
+    },
+    
+    "calendar": {
+      "weekTotal": "Sem"
+    }
+  },
+
+  "initialSetup": {
+    "title": "Configuration Initiale",
+    "description": "Personnalisez l'application pour commencer.",
+    "nameLabel": "Votre Nom",
+    "namePlaceholder": "ex : Marie Dubois",
+    "nameError": "Le nom ne peut pas être vide.",
+    "rateLabel": "Votre Tarif Horaire",
+    "currencyLabel": "Symbole Monétaire",
+    "dailyGoalLabel": "Objectif de Gains Quotidiens",
+    "monthlyGoalLabel": "Objectif de Gains Mensuels",
+    "themeLabel": "Thème Visuel",
+    "lightTheme": "Clair",
+    "darkTheme": "Sombre",
+    "rateError": "Le tarif horaire doit être un nombre valide.",
+    "currencyError": "Le symbole monétaire ne peut pas être vide.",
+    "dailyGoalError": "L'objectif quotidien doit être un nombre valide.",
+    "monthlyGoalError": "L'objectif mensuel doit être un nombre valide.",
+    "startButton": "Commencer",
+    "footerNote": "Vous pourrez modifier toutes ces valeurs plus tard dans le menu Paramètres."
+  },
+  "weekdays": {
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi",
+    "thursday": "Jeudi",
+    "friday": "Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "na": "N/A"
+  },
+  "weekdaysShort": {
+    "monday": "Lun",
+    "tuesday": "Mar",
+    "wednesday": "Mer",
+    "thursday": "Jeu",
+    "friday": "Ven",
+    "saturday": "Sam",
+    "sunday": "Dim"
+  },
+   "login": {
+    "welcomeMessage": "Connectez-vous pour synchroniser vos données dans le cloud.",
+    "signInWithGoogle": "Se connecter avec Google",
+    "firebaseNotConfigured": "La configuration de Firebase n'a pas été trouvée. La connexion est désactivée.",
+    "firebaseNotConfiguredDetails": "Veuillez vérifier le fichier <code>index.html</code> à la racine du projet et remplacer <code>PASTE_YOUR_FIREBASE_API_KEY_HERE</code> par votre clé API Firebase réelle.",
+    "unauthorizedDomainErrorTitle": "Erreur de Domaine Non Autorisé",
+    "unauthorizedDomainError": "Ce domaine (<code>{{domain}}</code>) n'est pas autorisé. <br/> Veuillez vous rendre dans votre <strong>Console Firebase &rarr; Authentication &rarr; Settings &rarr; Domaines autorisés</strong> et ajouter ce domaine à la liste pour activer la connexion."
+  }
+}

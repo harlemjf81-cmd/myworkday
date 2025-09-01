@@ -1,0 +1,344 @@
+{
+  "appName": "MyWorkday",
+  "appDescription": "Take full control of your hourly income. This application is the ultimate tool for freelancers and hourly workers who want to record their workdays, calculate earnings (including overtime and goal surpluses), and visualize their financial progress in a detailed and motivating way.",
+  "footer": "MyWorkday",
+
+  "tabs": {
+    "workday": "Workday",
+    "payments": "Payments",
+    "charts": "Charts"
+  },
+
+  "header": {
+    "settings": "Settings",
+    "settingsFor": "Settings for {{name}}",
+    "openSettings": "Open settings menu",
+    "dataManagement": "Data Management",
+    "localBackup": "Backup",
+    "generateReport": "Generate Report for Payer",
+    "goalsAndReminders": "Goals & Reminders",
+    "dailyGoal": "Daily Earnings Goal",
+    "monthlyGoal": "Monthly Earnings Goal",
+    "paymentReminder": "Payment Reminder",
+    "customizationAndRate": "Customization & Rate",
+    "editName": "Edit Name",
+    "changeCurrency": "Change Currency Symbol",
+    "customizeTheme": "Customize Theme",
+    "editRate": "Edit Rate",
+    "configureOvertime": "Configure Overtime",
+    "help": "Help",
+    "quickGuide": "Quick Guide",
+    "toggleCrtEffect": "Toggle CRT effect",
+    "signOut": "Sign Out"
+  },
+  
+  "dayEditor": {
+    "title": "Workday:",
+    "selectDate": "Select date",
+    "aiVoiceInput": "Voice Input (AI)",
+    "pendingPayment": "Payment Pending",
+    "dayHours": "Day's Hours:",
+    "dayEarnings": "Day's Earnings:",
+    "shift": "Shift {{number}}",
+    "deleteShift": "Delete Shift {{number}}",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "setCurrentTime": "Set current time (rounded)",
+    "now": "Now",
+    "hoursForShift": "Hours for shift {{number}}:",
+    "save": "Save",
+    "saveAndNext": "Save & Next Day",
+    "noChangesToSave": "No changes to save."
+  },
+
+  "notifications": {
+    "goalNotMet": "Goal not met. Short by {{currencySymbol}}{{amount}}.",
+    "daySaved": "Workday saved.",
+    "daySavedAndNext": "Workday saved and day advanced.",
+    "paymentMarkedAsReceived": "Payment for {{date}} marked as received.",
+    "noDataToExport": "No data to export.",
+    "dataExportedSuccess": "Data exported successfully (JSON).",
+    "errorExportingData": "Error exporting JSON data: {{error}}",
+    "noFileSelected": "No file selected.",
+    "errorReadingFile": "Error reading file.",
+    "dataImportedSuccess": "Data imported successfully.",
+    "noNewData": "The file did not contain any new reports to import.",
+    "errorImportingData": "Error importing data: {{error}}",
+    "hourlyRateUpdated": "Hourly rate updated.",
+    "overtimeSettingsUpdated": "Overtime settings updated.",
+    "themeUpdated": "Theme updated.",
+    "dailyGoalUpdated": "Daily earnings goal updated.",
+    "monthlyGoalUpdated": "Monthly earnings goal updated.",
+    "paymentReminderUpdated": "Payment reminder settings updated.",
+    "currencySymbolUpdated": "Currency symbol updated.",
+    "nameUpdated": "Name updated successfully.",
+    "aiVoiceError": "Speech recognition error: {{error}}",
+    "aiRecordingError": "Error starting recording. Make sure you have granted microphone permission.",
+    "aiShiftsUpdated": "Shifts updated with AI.",
+    "aiInvalidShiftError": "AI could not determine a valid shift.",
+    "reportGenerated": "Report generated successfully. The JSON file has been downloaded.",
+    "errorGeneratingReport": "Error generating report: {{error}}",
+    "hours": "hours"
+  },
+
+  "modals": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "confirm": "Confirm",
+    "close": "Close",
+    "understood": "Got it",
+
+    "hourlyRate": {
+      "title": "Edit Hourly Rate",
+      "newRateLabel": "New Hourly Rate ({{currencySymbol}})",
+      "placeholder": "e.g., 20.50",
+      "error": "Please enter a valid positive number for the rate.",
+      "saveButton": "Save Rate"
+    },
+    
+    "overtime": {
+      "title": "Configure Overtime",
+      "description": "Define a special rate for hours worked beyond a certain daily threshold. The current base rate is {{currencySymbol}}{{rate}}/h.",
+      "enableLabel": "Enable overtime",
+      "thresholdLabel": "Threshold (after X hours)",
+      "newRateLabel": "New Rate ({{currencySymbol}}/h)",
+      "thresholdError": "The hour threshold must be a positive number.",
+      "rateError": "The overtime rate must be a positive number.",
+      "saveButton": "Save Changes"
+    },
+
+    "theme": {
+      "title": "Customize Theme",
+      "headerColor": "Header Color",
+      "appBgColor": "App Background Color",
+      "restoreDefaults": "Restore Defaults",
+      "saveButton": "Save Theme",
+      "presets": {
+        "sky": "Sky",
+        "slate": "Slate",
+        "forest": "Forest",
+        "plum": "Plum",
+        "sunset": "Sunset",
+        "ocean": "Ocean",
+        "hacker": "Hacker"
+      },
+      "customColor": "Custom",
+      "backToPresets": "Back to Presets"
+    },
+
+    "idealDailyEarnings": {
+      "title": "Daily Earnings Goal",
+      "label": "Ideal Daily Earnings Goal ({{currencySymbol}})",
+      "placeholder": "e.g., 100",
+      "description": "Set a goal to visualize it on the daily earnings chart. If a workday doesn't meet this goal, the bar will be shown in red.",
+      "error": "Please enter a valid positive number for the goal.",
+      "saveButton": "Save Goal"
+    },
+
+    "idealMonthlyEarnings": {
+      "title": "Monthly Earnings Goal",
+      "label": "Ideal Monthly Earnings Goal ({{currencySymbol}})",
+      "placeholder": "e.g., 2000",
+      "description": "Set a goal to visualize it on the monthly summary chart. Months that do not reach this goal will be highlighted.",
+      "error": "Please enter a valid positive integer for days.",
+      "saveButton": "Save Monthly Goal"
+    },
+
+    "paymentReminder": {
+      "title": "Set Payment Reminder",
+      "label": "Notify after (days of pending payment):",
+      "placeholder": "e.g., 7",
+      "description": "The app will show a warning notification for payments that have been pending for more days than configured here.",
+      "error": "Please enter a positive integer for days.",
+      "saveButton": "Save Settings"
+    },
+
+    "currency": {
+      "title": "Change Currency Symbol",
+      "label": "Currency Symbol (e.g., $, €, £)",
+      "placeholder": "e.g., $",
+      "description": "This symbol will be used to display all monetary amounts in the application.",
+      "emptyError": "The currency symbol cannot be empty.",
+      "lengthError": "The currency symbol is too long (max. 5 characters).",
+      "saveButton": "Save Symbol"
+    },
+
+    "workerName": {
+      "title": "Edit Name",
+      "label": "Your name (will be used in reports)",
+      "placeholder": "e.g., John Doe",
+      "error": "Name cannot be empty.",
+      "saveButton": "Save Name"
+    },
+
+    "generateReport": {
+      "title": "Generate Report for Payer",
+      "description": "Select a date range to generate a JSON report that you can send to your payer.",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "generateButton": "Generate & Download Report"
+    },
+
+    "dataManager": {
+      "title": "Data Management",
+      "localBackup": "Local Backup",
+      "localDescription": "Save or load a JSON file of your data on your device.",
+      "exportToFile": "Export to file",
+      "importFromFile": "Import from file"
+    },
+
+    "aiShiftInput": {
+      "title": "Voice Input",
+      "apiNotReady": "The Gemini or Speech Recognition API is not available. Ensure you have an API Key and your browser is compatible.",
+      "description": "Press the microphone and say your workday. <br/>Example: \"Today I worked from 9 to 2 thirty, and then from 4 to 7 fifteen.\"",
+      "startRecording": "Start recording",
+      "stopRecording": "Stop recording",
+      "processing": "Processing with AI...",
+      "waiting": "Waiting to record..."
+    },
+    
+    "welcome1980": {
+      "title": "WELCOME TO 1980",
+      "ok": "OK"
+    }
+  },
+  
+  "charts": {
+    "size": "Size",
+    "sizeSmall": "Small",
+    "sizeMedium": "Medium",
+    "sizeLarge": "Large",
+    "earnings": "Earnings",
+    "dayOfMonth": "Day of Month",
+    "weekOfMonth": "Week of Month",
+    "monthOfYear": "Month of Year {{year}}",
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
+    "previousYear": "Previous year",
+    "nextYear": "Next year",
+    "currentYear": "Current Year",
+    "today": "Today",
+    "totalMonth": "Month's Total:",
+    "noDataForChart": "No data to generate chart for {{monthYear}}.",
+    "noEarningsRecorded": "No earnings recorded for {{monthYear}}.",
+    "goal": "Goal:",
+    "earningsTooltip": "Earnings:",
+    "goalTooltip": "Goal:",
+    "noDataForChartGeneric": "No data to display.",
+    "surplus": "Surplus",
+    "week": "Wk",
+
+    "monthlyEarnings": {
+      "title": "Monthly Earnings Summary"
+    },
+    
+    "weeklyAverage": {
+      "title": "Monthly Average Stats",
+      "daysWorked": "Days Worked",
+      "totalHours": "Total Hours",
+      "avgHoursDay": "Avg Hours/Day",
+      "busiestDay": "Most Productive Day"
+    },
+    
+    "overtime": {
+      "title": "Overtime Stats",
+      "notEnabled": "The overtime feature is not enabled. You can activate it in the settings.",
+      "totalMonth": "Total Overtime Hours in Month",
+      "weeklyBreakdown": "Weekly Breakdown",
+      "dailyBreakdown": "Daily Breakdown",
+      "noOvertimeMonth": "No overtime hours recorded for this month.",
+      "noOvertimeDays": "No days with overtime this month."
+    },
+    
+    "weeklySummary": {
+      "title": "Weekly Summary",
+      "week": "Wk",
+      "noEarningsWeek": "No earnings were recorded for the weeks of this month."
+    },
+    
+    "monthlySummary": {
+      "title": "Monthly Earnings Summary",
+      "noData": "No earnings data to display.",
+      "weekLegend": "Week {{number}}",
+      "surplusLegend": "Surplus",
+      "noEarningsMonths": "No earnings recorded for the displayed months.",
+      "chartAriaLabel": "Horizontal bar chart showing total earnings for each month. Each bar is segmented by weekly earnings."
+    },
+    
+    "annualReport": {
+      "title": "Annual Report",
+      "insufficientData": "Insufficient data for annual chart.",
+      "month": "Month",
+      "totalAnnual": "Annual Total",
+      "noEarningsYear": "No earnings recorded for this year."
+    },
+    
+    "currentPeriodSummary": {
+      "title": "Quick Summary",
+      "today": "Today",
+      "thisWeek": "This Week",
+      "thisMonth": "This Month"
+    },
+    
+    "pendingPayments": {
+      "title": "Pending Payments",
+      "titleCount": "Pending Payments ({{count}})",
+      "totalPending": "Total Pending:",
+      "noPending": "No pending payments at the moment.",
+      "pendingEarning": "Pending Earning:",
+      "markAsPaid": "Mark as Paid"
+    },
+
+    "calendar": {
+      "weekTotal": "Week"
+    }
+  },
+
+  "initialSetup": {
+    "title": "Initial Setup",
+    "description": "Customize the application to get started.",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "e.g., Jane Smith",
+    "nameError": "Name cannot be empty.",
+    "rateLabel": "Your Hourly Rate",
+    "currencyLabel": "Currency Symbol",
+    "dailyGoalLabel": "Daily Earnings Goal",
+    "monthlyGoalLabel": "Monthly Earnings Goal",
+    "themeLabel": "Visual Theme",
+    "lightTheme": "Light",
+    "darkTheme": "Dark",
+    "rateError": "The hourly rate must be a valid number.",
+    "currencyError": "The currency symbol cannot be empty.",
+    "dailyGoalError": "The daily goal must be a valid number.",
+    "monthlyGoalError": "The monthly goal must be a valid number.",
+    "startButton": "Get Started",
+    "footerNote": "You can change all these values later from the Settings menu."
+  },
+  "weekdays": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "na": "N/A"
+  },
+  "weekdaysShort": {
+    "monday": "Mon",
+    "tuesday": "Tue",
+    "wednesday": "Wed",
+    "thursday": "Thu",
+    "friday": "Fri",
+    "saturday": "Sat",
+    "sunday": "Sun"
+  },
+   "login": {
+    "welcomeMessage": "Sign in to sync your data in the cloud.",
+    "signInWithGoogle": "Sign in with Google",
+    "firebaseNotConfigured": "Firebase configuration not found. Login is disabled.",
+    "firebaseNotConfiguredDetails": "Please check the <code>index.html</code> file in the project root and replace <code>PASTE_YOUR_FIREBASE_API_KEY_HERE</code> with your actual Firebase API key.",
+    "unauthorizedDomainErrorTitle": "Unauthorized Domain Error",
+    "unauthorizedDomainError": "This domain (<code>{{domain}}</code>) is not authorized. <br/> Please go to your <strong>Firebase Console &rarr; Authentication &rarr; Settings &rarr; Authorized domains</strong> and add this domain to the list to enable sign-in."
+  }
+}

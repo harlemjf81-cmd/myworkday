@@ -1,0 +1,344 @@
+{
+  "appName": "MyWorkday",
+  "appDescription": "Prendi il pieno controllo del tuo reddito orario. Questa applicazione è lo strumento definitivo per freelance e lavoratori a ore che desiderano registrare le loro giornate lavorative, calcolare i guadagni (inclusi straordinari e surplus degli obiettivi) e visualizzare i loro progressi finanziari in modo dettagliato e motivante.",
+  "footer": "MyWorkday",
+
+  "tabs": {
+    "workday": "Giornata",
+    "payments": "Pagamenti",
+    "charts": "Grafici"
+  },
+
+  "header": {
+    "settings": "Impostazioni",
+    "settingsFor": "Impostazioni di {{name}}",
+    "openSettings": "Apri menu impostazioni",
+    "dataManagement": "Gestione Dati",
+    "localBackup": "Backup",
+    "generateReport": "Genera Report",
+    "goalsAndReminders": "Obiettivi e Promemoria",
+    "dailyGoal": "Obiettivo Guadagno Giornaliero",
+    "monthlyGoal": "Obiettivo Guadagno Mensile",
+    "paymentReminder": "Promemoria Pagamenti",
+    "customizationAndRate": "Personalizzazione e Tariffa",
+    "editName": "Modifica Nome",
+    "changeCurrency": "Cambia Simbolo Valuta",
+    "customizeTheme": "Personalizza Tema",
+    "editRate": "Modifica Tariffa",
+    "configureOvertime": "Configura Straordinari",
+    "help": "Aiuto",
+    "quickGuide": "Guida Rapida",
+    "toggleCrtEffect": "Attiva/Disattiva effetto CRT",
+    "signOut": "Esci"
+  },
+
+  "dayEditor": {
+    "title": "Giornata:",
+    "selectDate": "Seleziona data",
+    "aiVoiceInput": "Input Vocale (IA)",
+    "pendingPayment": "Pagamento in Sospeso",
+    "dayHours": "Ore del giorno:",
+    "dayEarnings": "Guadagni del giorno:",
+    "shift": "Turno {{number}}",
+    "deleteShift": "Elimina Turno {{number}}",
+    "startTime": "Ora di Inizio",
+    "endTime": "Ora di Fine",
+    "setCurrentTime": "Imposta ora corrente (arrotondata)",
+    "now": "Adesso",
+    "hoursForShift": "Ore del turno {{number}}:",
+    "save": "Salva",
+    "saveAndNext": "Salva e Giorno Succ.",
+    "noChangesToSave": "Nessuna modifica da salvare."
+  },
+
+  "notifications": {
+    "goalNotMet": "Obiettivo non raggiunto. Mancano {{currencySymbol}}{{amount}}.",
+    "daySaved": "Giornata salvata.",
+    "daySavedAndNext": "Giornata salvata e giorno avanzato.",
+    "paymentMarkedAsReceived": "Pagamento per il {{date}} contrassegnato come ricevuto.",
+    "noDataToExport": "Nessun dato da esportare.",
+    "dataExportedSuccess": "Dati esportati con successo (JSON).",
+    "errorExportingData": "Errore durante l'esportazione dei dati JSON: {{error}}",
+    "noFileSelected": "Nessun file selezionato.",
+    "errorReadingFile": "Errore durante la lettura del file.",
+    "dataImportedSuccess": "Dati importati con successo.",
+    "noNewData": "Il file non conteneva nuovi report da importare.",
+    "errorImportingData": "Errore durante l'importazione dei dati: {{error}}",
+    "hourlyRateUpdated": "Tariffa oraria aggiornata.",
+    "overtimeSettingsUpdated": "Impostazioni straordinari aggiornate.",
+    "themeUpdated": "Tema aggiornato.",
+    "dailyGoalUpdated": "Obiettivo guadagni giornalieri aggiornato.",
+    "monthlyGoalUpdated": "Obiettivo guadagni mensili aggiornato.",
+    "paymentReminderUpdated": "Impostazioni promemoria pagamenti aggiornate.",
+    "currencySymbolUpdated": "Simbolo valuta aggiornato.",
+    "nameUpdated": "Nome aggiornato con successo.",
+    "aiVoiceError": "Errore riconoscimento vocale: {{error}}",
+    "aiRecordingError": "Errore nell'avvio della registrazione. Assicurati di aver concesso il permesso per il microfono.",
+    "aiShiftsUpdated": "Turni aggiornati con IA.",
+    "aiInvalidShiftError": "L'IA non è riuscita a determinare un turno valido.",
+    "reportGenerated": "Report generato con successo. Il file JSON è stato scaricato.",
+    "errorGeneratingReport": "Errore durante la generazione del report: {{error}}",
+    "hours": "ore"
+  },
+
+  "modals": {
+    "cancel": "Annulla",
+    "save": "Salva",
+    "confirm": "Conferma",
+    "close": "Chiudi",
+    "understood": "Capito",
+
+    "hourlyRate": {
+      "title": "Modifica Tariffa Oraria",
+      "newRateLabel": "Nuova Tariffa Oraria ({{currencySymbol}})",
+      "placeholder": "es: 20.50",
+      "error": "Inserisci un numero positivo valido per la tariffa.",
+      "saveButton": "Salva Tariffa"
+    },
+    
+    "overtime": {
+      "title": "Configura Straordinari",
+      "description": "Definisci una tariffa speciale per le ore lavorate oltre una certa soglia giornaliera. La tariffa base attuale è {{currencySymbol}}{{rate}}/h.",
+      "enableLabel": "Abilita straordinari",
+      "thresholdLabel": "Soglia (dopo X ore)",
+      "newRateLabel": "Nuova Tariffa ({{currencySymbol}}/h)",
+      "thresholdError": "La soglia oraria deve essere un numero positivo.",
+      "rateError": "La tariffa degli straordinari deve essere un numero positivo.",
+      "saveButton": "Salva Modifiche"
+    },
+
+    "theme": {
+      "title": "Personalizza Tema",
+      "headerColor": "Colore Intestazione",
+      "appBgColor": "Colore Sfondo App",
+      "restoreDefaults": "Ripristina Predefiniti",
+      "saveButton": "Salva Tema",
+      "presets": {
+        "sky": "Cielo",
+        "slate": "Ardesia",
+        "forest": "Foresta",
+        "plum": "Prugna",
+        "sunset": "Tramonto",
+        "ocean": "Oceano",
+        "hacker": "Hacker"
+      },
+      "customColor": "Personalizza",
+      "backToPresets": "Torna ai Predefiniti"
+    },
+    
+    "idealDailyEarnings": {
+      "title": "Obiettivo Guadagno Giornaliero",
+      "label": "Obiettivo Guadagno Giornaliero Ideale ({{currencySymbol}})",
+      "placeholder": "es: 100",
+      "description": "Imposta un obiettivo per visualizzarlo nel grafico dei guadagni giornalieri. Se una giornata lavorativa non raggiunge questo obiettivo, la barra verrà mostrata in rosso.",
+      "error": "Inserisci un numero positivo valido per l'obiettivo.",
+      "saveButton": "Salva Obiettivo"
+    },
+    
+    "idealMonthlyEarnings": {
+      "title": "Obiettivo Guadagno Mensile",
+      "label": "Obiettivo Guadagno Mensile Ideale ({{currencySymbol}})",
+      "placeholder": "es: 2000",
+      "description": "Imposta un obiettivo per visualizzarlo nel grafico riassuntivo mensile. I mesi che non raggiungono questo obiettivo verranno evidenziati.",
+      "error": "Inserisci un intero positivo per i giorni.",
+      "saveButton": "Salva Obiettivo Mensile"
+    },
+    
+    "paymentReminder": {
+      "title": "Imposta Promemoria Pagamenti",
+      "label": "Notifica dopo (giorni di pagamento in sospeso):",
+      "placeholder": "es: 7",
+      "description": "L'app mostrerà una notifica di avviso per i pagamenti in sospeso da più giorni di quanto configurato qui.",
+      "error": "Inserisci un intero positivo per i giorni.",
+      "saveButton": "Salva Impostazioni"
+    },
+
+    "currency": {
+      "title": "Cambia Simbolo Valuta",
+      "label": "Simbolo Valuta (es: $, €, £)",
+      "placeholder": "es: $",
+      "description": "Questo simbolo verrà utilizzato per visualizzare tutti gli importi monetari nell'applicazione.",
+      "emptyError": "Il simbolo della valuta non può essere vuoto.",
+      "lengthError": "Il simbolo della valuta è troppo lungo (max. 5 caratteri).",
+      "saveButton": "Salva Simbolo"
+    },
+
+    "workerName": {
+      "title": "Modifica Nome",
+      "label": "Il tuo nome (verrà usato nei report)",
+      "placeholder": "es: Mario Rossi",
+      "error": "Il nome non può essere vuoto.",
+      "saveButton": "Salva Nome"
+    },
+
+    "generateReport": {
+      "title": "Genera Report per il Pagatore",
+      "description": "Seleziona un intervallo di date per generare un report JSON da inviare al tuo pagatore.",
+      "startDate": "Data di Inizio",
+      "endDate": "Data di Fine",
+      "generateButton": "Genera e Scarica Report"
+    },
+
+    "dataManager": {
+      "title": "Gestione Dati",
+      "localBackup": "Backup Locale",
+      "localDescription": "Salva o carica un file JSON dei tuoi dati sul tuo dispositivo.",
+      "exportToFile": "Esporta su file",
+      "importFromFile": "Importa da file"
+    },
+
+    "aiShiftInput": {
+      "title": "Input Vocale",
+      "apiNotReady": "L'API di Gemini o di riconoscimento vocale non è disponibile. Assicurati di avere una chiave API e che il tuo browser sia compatibile.",
+      "description": "Premi il microfono e pronuncia la tua giornata lavorativa. <br/>Esempio: \"Oggi ho lavorato dalle 9 alle 2 e mezza, e poi dalle 4 alle 7 e un quarto.\"",
+      "startRecording": "Avvia registrazione",
+      "stopRecording": "Ferma registrazione",
+      "processing": "Elaborazione con IA...",
+      "waiting": "In attesa di registrare..."
+    },
+    
+    "welcome1980": {
+      "title": "BENVENUTI NEL 1980",
+      "ok": "OK"
+    }
+  },
+  
+  "charts": {
+    "size": "Dim.",
+    "sizeSmall": "Piccolo",
+    "sizeMedium": "Medio",
+    "sizeLarge": "Grande",
+    "earnings": "Guadagni",
+    "dayOfMonth": "Giorno del Mese",
+    "weekOfMonth": "Settimana del Mese",
+    "monthOfYear": "Mese dell'Anno {{year}}",
+    "previousMonth": "Mese precedente",
+    "nextMonth": "Mese successivo",
+    "previousYear": "Anno precedente",
+    "nextYear": "Anno successivo",
+    "currentYear": "Anno Corrente",
+    "today": "Oggi",
+    "totalMonth": "Totale Mese:",
+    "noDataForChart": "Nessun dato per generare il grafico per {{monthYear}}.",
+    "noEarningsRecorded": "Nessun guadagno registrato per {{monthYear}}.",
+    "goal": "Obiettivo:",
+    "earningsTooltip": "Guadagni:",
+    "goalTooltip": "Obiettivo:",
+    "noDataForChartGeneric": "Nessun dato da visualizzare.",
+    "surplus": "Eccedenza",
+    "week": "Sett",
+
+    "monthlyEarnings": {
+      "title": "Riepilogo Guadagni Mensili"
+    },
+    
+    "weeklyAverage": {
+      "title": "Statistiche Medie Mensili",
+      "daysWorked": "Giorni Lavorati",
+      "totalHours": "Ore Totali",
+      "avgHoursDay": "Media Ore/Giorno",
+      "busiestDay": "Giorno Più Produttivo"
+    },
+    
+    "overtime": {
+      "title": "Statistiche Straordinari",
+      "notEnabled": "La funzione straordinari non è abilitata. Puoi attivarla nelle impostazioni.",
+      "totalMonth": "Totale Ore Straordinarie nel Mese",
+      "weeklyBreakdown": "Dettaglio Settimanale",
+      "dailyBreakdown": "Dettaglio Giornaliero",
+      "noOvertimeMonth": "Nessuna ora straordinaria registrata per questo mese.",
+      "noOvertimeDays": "Nessun giorno con straordinari questo mese."
+    },
+    
+    "weeklySummary": {
+      "title": "Riepilogo Settimanale",
+      "week": "Sett",
+      "noEarningsWeek": "Nessun guadagno registrato per le settimane di questo mese."
+    },
+    
+    "monthlySummary": {
+      "title": "Riepilogo Guadagni Mensili",
+      "noData": "Nessun dato sui guadagni da mostrare.",
+      "weekLegend": "Settimana {{number}}",
+      "surplusLegend": "Eccedenza",
+      "noEarningsMonths": "Nessun guadagno registrato per i mesi visualizzati.",
+      "chartAriaLabel": "Grafico a barre orizzontali che mostra i guadagni totali per ogni mese. Ogni barra è segmentata per guadagni settimanali."
+    },
+    
+    "annualReport": {
+      "title": "Rapporto Annuale",
+      "insufficientData": "Dati insufficienti per il grafico annuale.",
+      "month": "Mese",
+      "totalAnnual": "Totale Annuale",
+      "noEarningsYear": "Nessun guadagno registrato per quest'anno."
+    },
+    
+    "currentPeriodSummary": {
+      "title": "Riepilogo Rapido",
+      "today": "Oggi",
+      "thisWeek": "Questa Settimana",
+      "thisMonth": "Questo Mese"
+    },
+    
+    "pendingPayments": {
+      "title": "Pagamenti in Sospeso",
+      "titleCount": "Pagamenti in Sospeso ({{count}})",
+      "totalPending": "Totale in Sospeso:",
+      "noPending": "Nessun pagamento in sospeso al momento.",
+      "pendingEarning": "Guadagno in Sospeso:",
+      "markAsPaid": "Segna come Pagato"
+    },
+    
+    "calendar": {
+      "weekTotal": "Sett"
+    }
+  },
+
+  "initialSetup": {
+    "title": "Configurazione Iniziale",
+    "description": "Personalizza l'applicazione per iniziare.",
+    "nameLabel": "Il Tuo Nome",
+    "namePlaceholder": "es: Giulia Neri",
+    "nameError": "Il nome non può essere vuoto.",
+    "rateLabel": "La tua Tariffa Oraria",
+    "currencyLabel": "Simbolo Valuta",
+    "dailyGoalLabel": "Obiettivo Guadagno Giornaliero",
+    "monthlyGoalLabel": "Obiettivo Guadagno Mensile",
+    "themeLabel": "Tema Visivo",
+    "lightTheme": "Chiaro",
+    "darkTheme": "Scuro",
+    "rateError": "La tariffa oraria deve essere un numero valido.",
+    "currencyError": "Il simbolo della valuta non può essere vuoto.",
+    "dailyGoalError": "L'obiettivo giornaliero deve essere un numero valido.",
+    "monthlyGoalError": "L'obiettivo mensile deve essere un numero valido.",
+    "startButton": "Inizia a Usare",
+    "footerNote": "Potrai modificare tutti questi valori in seguito dal menu Impostazioni."
+  },
+  "weekdays": {
+    "monday": "Lunedì",
+    "tuesday": "Martedì",
+    "wednesday": "Mercoledì",
+    "thursday": "Giovedì",
+    "friday": "Venerdì",
+    "saturday": "Sabato",
+    "sunday": "Domenica",
+    "na": "N/A"
+  },
+  "weekdaysShort": {
+    "monday": "Lun",
+    "tuesday": "Mar",
+    "wednesday": "Mer",
+    "thursday": "Gio",
+    "friday": "Ven",
+    "saturday": "Sab",
+    "sunday": "Dom"
+  },
+   "login": {
+    "welcomeMessage": "Accedi per sincronizzare i tuoi dati nel cloud.",
+    "signInWithGoogle": "Accedi con Google",
+    "firebaseNotConfigured": "Configurazione di Firebase non trovata. L'accesso è disabilitato.",
+    "firebaseNotConfiguredDetails": "Controlla il file <code>index.html</code> nella radice del progetto e sostituisci <code>PASTE_YOUR_FIREBASE_API_KEY_HERE</code> con la tua chiave API di Firebase effettiva.",
+    "unauthorizedDomainErrorTitle": "Errore di Dominio Non Autorizzato",
+    "unauthorizedDomainError": "Questo dominio (<code>{{domain}}</code>) non è autorizzato. <br/> Vai alla tua <strong>Console Firebase &rarr; Authentication &rarr; Settings &rarr; Domini autorizzati</strong> e aggiungi questo dominio all'elenco per abilitare l'accesso."
+  }
+}
