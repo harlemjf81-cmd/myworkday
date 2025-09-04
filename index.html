@@ -1,37 +1,37 @@
-<script type="importmap">
-{
-  "imports": {
-    "vite": "https://aistudiocdn.com/vite@^7.1.3",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.2",
-    "react/": "https://aistudiocdn.com/react@^18.2.0/",
-    "react": "https://aistudiocdn.com/react@^18.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^18.2.0/",
-    "react-i18next": "https://aistudiocdn.com/react-i18next@^15.7.3",
-    "firebase/": "https://aistudiocdn.com/firebase@^12.2.1/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.16.0",
-    "i18next": "https://aistudiocdn.com/i18next@^25.4.2",
-    "i18next-browser-languagedetector": "https://aistudiocdn.com/i18next-browser-languagedetector@^8.2.0",
-    "i18next-http-backend": "https://aistudiocdn.com/i18next-http-backend@^3.0.2"
-  }
-}
-</script>
-<script>
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBZO8Kl-b2dgoi-jNeaBSYoD_76IflpQQk",
-    authDomain: "myworkdaydatabase.firebaseapp.com",
-    projectId: "myworkdaydatabase",
-    storageBucket: "myworkdaydatabase.firebasestorage.app",
-    messagingSenderId: "410360714441",
-    appId: "1:410360714441:web:f041f0715439e4dadb2918",
-    measurementId: "G-28SYBER4MD"
-  };
-  // Make the config available globally for firebase.ts
-  window.firebaseConfig = firebaseConfig;
-</script>
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script type="importmap">
+  {
+    "imports": {
+      "vite": "https://aistudiocdn.com/vite@^7.1.3",
+      "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.2",
+      "react/": "https://aistudiocdn.com/react@^18.2.0/",
+      "react": "https://aistudiocdn.com/react@^18.2.0",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^18.2.0/",
+      "react-i18next": "https://aistudiocdn.com/react-i18next@^15.7.3",
+      "firebase/": "https://aistudiocdn.com/firebase@^12.2.1/",
+      "@google/genai": "https://aistudiocdn.com/@google/genai@^1.16.0",
+      "i18next": "https://aistudiocdn.com/i18next@^25.4.2",
+      "i18next-browser-languagedetector": "https://aistudiocdn.com/i18next-browser-languagedetector@^8.2.0",
+      "i18next-http-backend": "https://aistudiocdn.com/i18next-http-backend@^3.0.2"
+    }
+  }
+  </script>
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBZO8Kl-b2dgoi-jNeaBSYoD_76IflpQQk",
+      authDomain: "myworkdaydatabase.firebaseapp.com",
+      projectId: "myworkdaydatabase",
+      storageBucket: "myworkdaydatabase.firebasestorage.app",
+      messagingSenderId: "410360714441",
+      appId: "1:410360714441:web:f041f0715439e4dadb2918",
+      measurementId: "G-28SYBER4MD"
+    };
+    // Make the config available globally for firebase.ts
+    window.firebaseConfig = firebaseConfig;
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MyWorkday</title>
@@ -287,11 +287,9 @@
       pointer-events: none;
     }
   </style>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-slate-50 dark:bg-slate-900">
   <div id="root"></div>
   <script type="module" src="./index.tsx"></script>
-<script type="module" src="/index.tsx"></script>
 </body>
 </html>
