@@ -7,19 +7,12 @@ let app: FirebaseApp | null = null;
 let authInstance: Auth | null = null;
 let dbInstance: Firestore | null = null;
 
-const configSource = process.env.firebaseConfig as any;
+// Read the config from the global window object set in index.html
+const configSource = (window as any).firebaseConfig;
 let firebaseConfig: FirebaseOptions & { measurementId?: string } | undefined;
 
-if (configSource) {
-  if (typeof configSource === 'object' && configSource !== null) {
+if (configSource && typeof configSource === 'object') {
     firebaseConfig = configSource;
-  } else if (typeof configSource === 'string') {
-    try {
-      firebaseConfig = JSON.parse(configSource);
-    } catch (e) {
-      console.error("Failed to parse firebase config from environment variable.", e);
-    }
-  }
 }
 
 const isConfigValid = !!(firebaseConfig && firebaseConfig.apiKey && !firebaseConfig.apiKey.startsWith('PASTE_YOUR_'));
