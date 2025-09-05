@@ -133,5 +133,4 @@ export const OvertimeSettingsModal: React.FC<OvertimeSettingsModalProps> = ({ cu
   );
 };
 
-// FIX: Add default export to comply with React.lazy expectation in WorkerView.tsx
 export default OvertimeSettingsModal;
